@@ -3,6 +3,9 @@ console.log('Starting Server.js');
 //requiring the express module (3rd Party)
 const express = require('express');
 
+//default const value for port
+const port = process.env.PORT || 3000;
+
 let app = express();
 
 //requiring the hbs express hbs plugin
@@ -47,6 +50,6 @@ app.get('/projects', function (req, res) {
     })
 });
 
-app.listen(3000, function () {
-    console.log('Server has started and listening at port 3000')
+app.listen(port, function () {
+    console.log('Server has started and listening at port ', port);
 })
